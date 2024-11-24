@@ -1,0 +1,23 @@
+<div class="m-4 mx-auto p-4 w-1/3 bg-sky-100 rounded-md drop-shadow-lg">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="my-2">
+      <label for="email">Email</label><br>
+      <input id="email" type="text" formControlName="email"
+      placeholder="Your email" (keyup)="validateEmail()" required class="p-1 w-full"/>
+      <p *ngIf="emptyEmail" id="emptyEmailText" class="text-red-400 font-semibold">Email must be filled</p>
+      <p *ngIf="invalidEmail" id="invalidEmailText" class="text-red-400 font-semibold">Invalid Email</p>
+    </div>
+    <div class="my-2">
+      <label for="password">Password</label><br>
+      <input id="password" type="password" formControlName="password"
+      placeholder="Password" (change)="validatePassword()" required class="p-1 w-full"/><br>
+      <p *ngIf="emptyPassword" id="emptyPasswordText" class="text-red-400 font-semibold">Password must be filled</p>
+    </div>
+    <p *ngIf="failedToLogin" id="loginFailText" class="text-red-400 font-semibold">Email or password is incorrect</p>
+    <br>
+    <div class="text-center">
+      <button type="submit" class="p-2 bg-sky-400 text-white
+      font-bold rounded-lg">Login</button>
+    </div>
+  </form>
+</div>

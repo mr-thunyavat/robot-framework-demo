@@ -1,0 +1,7 @@
+<form [formGroup]="fileUploadForm" (ngSubmit)="submit()">
+  <input type="file" formControlName="file" required/>
+  <button type="submit" class="p-2 mr-4 bg-sky-400 text-white
+  font-bold rounded-lg">Upload</button>
+  <button (click)="cancel()" class="p-2 bg-sky-400 text-white
+  font-bold rounded-lg">Cancel</button>
+</form>

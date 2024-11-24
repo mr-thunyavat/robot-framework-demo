@@ -1,0 +1,11 @@
+<div class="mx-auto my-4 p-4 bg-sky-100 rounded-md w-1/2 drop-shadow-md">
+  <h2 class="text-2xl font-bold">Your files</h2>
+  <p>Total files: {{ getFileLength() }}</p>
+  <p *ngIf="getFileLength() != 0">Latest file {{ getFirstFile() }}</p>
+  <p *ngIf="getFileLength() == 0">Start upload your file!</p>
+  <div class="text-center">
+    <button (click)="redirectToAddFile()" class="p-2 bg-sky-400 text-white
+    font-bold rounded-lg">Add file</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
